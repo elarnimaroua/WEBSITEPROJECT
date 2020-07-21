@@ -1,0 +1,52 @@
+{% extends "SITEAPP/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="essai">S
+<aside style="font-size: larger; float:right; width:400px; border:2px black solid; padding: 15px">
+    <section id="about">
+
+        <h2> <en> Marrakech </en> </h2>
+                 <div class="about-content">
+                 Marrakech est une ville située dans le centre du Maroc au pied des montagnes de l'Atlas.
+                 Elle est surnommée « la ville rouge » ou la « ville ocre » en référence à la couleur rouge d'une grande partie de ses immeubles et ses maisons.
+                 Elle est comptée parmi les villes touristiques les plus connues au Maroc.
+                 La ville rouge constitue la capitale touristique du pays, elle est également surnommée la « Perle du Sud » par la beauté de ses monuments.
+                 </div>
+
+
+<section>
+</aside>
+
+ <!--------description-------->
+<div class="cartemaroc">
+<h4>La ville rouge</h4>
+ <section class="map">
+     <figure> <img src="{% static 'images/Palais-Bahia.jpg' %}" style="width:100%"> <figcaption style="text-align: center">Palais Bahia, Marrakech </figcaption> </figure> </section></div>
+    </div>
+
+        </section>
+
+</section>
+<!--------différents -------->
+<h3>Que cherchez-vous au juste ?</h3>
+<div class="icones">
+    <center>
+        <a href="{% url 'monumentmarrakech' %}">
+            <img src="{% static 'images/monument-historique.png' %}" style="width:15%" >
+        </a>
+        <a href="{% url 'restaurantmarrakech' %}">
+            <img src="{% static 'images/restaurant-cafe.png' %}" style="width:15%">
+        </a>
+        <a href="{% url 'hotelmarrakech' %}">
+            <img src="{% static 'images/hotel-loyer.png' %}" style="width:15%">
+        </a>
+        <a href="{% url 'activitemarrakech' %}">
+            <img src="{% static 'images/activites-outdoor.png' %}" style="width:15%">
+        </a>
+
+
+    </center>
+
+</div>
+{% endblock content %}

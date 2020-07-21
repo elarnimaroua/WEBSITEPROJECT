@@ -1,0 +1,94 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+
+<title> Maroc Guide </title>
+<link rel="stylesheet" type='text/css'
+          href="{% static 'css/style0.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="{% url 'home-page' %}"> Maroc guide </a>
+    <div class="dropdown">
+         <button class="dropbtn">Destinations
+            <i class="fa fa-caret-down"></i>
+         </button>
+         <div class="dropdown-content">
+             <a href="#">Marrakech</a>
+             <a href="#">Tanger</a>
+             <a href="#">Tetouan</a>
+             <a href="#">Dakhla</a>
+             <a href="#">Merzouga</a>
+             <a href="#">Ifrane</a>
+             <a href="#">Fes</a>
+
+         </div>
+  </div>
+    <a href="#">Itinéraires conseillés</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'posts' %}"> Publications</a>
+    <a href="{% url 'post-create' %}">Publier</a>
+    {%endif%}
+
+    <a class="faq" href="#">FAQ</a>
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'profile' %}">Profil</a>
+    <a href="{% url 'logout' %}">Se déconnecter</a>
+   
+    {%else%}
+    <a href="{% url 'login' %}">Se connecter</a>
+    <a href="{% url 'register' %}">S'inscrire</a>
+    {%endif%}
+</div>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+{% block content %}{% endblock %}
+
+<!--------FOOTER-------->
+
+     <div class="footer-top">
+     <div class="container">
+        <div class="row">
+          <div class=".col-md-3.col-sm-6 col-xs-12 segment-one">
+            <h3> Nous sommes l&agrave; pour vous donner toutes les informations dont vous aurez besoin. </h3>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-two">
+            <h3>Contactez-nous</h3>
+            <p1>
+            T&eacute;l: 06.34.76.90.12 </br>Gmail: marocguide@gmail.com
+                    <a class="contact" href="index.html">Cliquez ici pour nous contacter</a>
+                    </p1>
+            <h5>Recevoir la newsletter</h5>
+            <p1><input type="email" name="mail" placeholder="Votre adresse email" value> <input type="hidden" name="origin" value="footer"> <input type="submit" value="OK"><br> </form> <div id="footer-newsletter-response"> </div> </p1>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-three">
+              <h3> Suivez-nous</h3>
+              <p1>
+                Suivez-nous sur les r&eacute;seaux sociaux afin de rester &agrave; jour.
+                <div class="reseau" href="#"><img src="{% static 'images/twitter.png' %}">MarocGuide</div>
+                <div class="reseau" href="#"><img src="{% static 'images/instagram.png' %}"> Maroc_Guide</div>
+                <div class="reseau" href="#"><img src="{% static 'images/facebook.png' %}">   Maroc Guide</div>
+              </p1>
+
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 segment-four">
+              <h3>Gardez Maroc guide dans votre poche! </h3>
+                         <a target="_blank" rel="noopener" href="https://www.apple.com/fr/ios/app-store/" class="column" data-v-38a5de1e data-v-38a5de1e><img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/app_store/download-button.svg" alt="App Store" class="store-icon" data-v-38a5de1e></a><a target="_blank" rel="noopener" href="https://play.google.com/store/apps" class="column" data-v-38a5de1e data-v-38a5de1e><img src="https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/google_play/download-button.svg" alt="Google play" class="store-icon" data-v-38a5de1e></a></div>
+
+          </div>
+
+
+    </div>
